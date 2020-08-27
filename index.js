@@ -32,6 +32,19 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+burger.discount = function (role) {
+	if (role === 'teacher' || role === 'student') {
+		this.price = this.price - this.price * 0.25;
+	} else if (role === 'first responder') {
+		this.price = this.price - this.price * 0.5;
+	} else {
+		this.price = this.price - this.price * 0.1;
+	}
+	return this.price;
+};
+
+console.log(burger.discount('first responder'));
+
 ///////////////Reviews (MVP)///////////////////
 
 const reviews = [
