@@ -133,7 +133,14 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
-function getReviewByIndex(reviews, index) {}
+
+function getReviewByIndex(reviews, indexNumber) {
+	for (let i = indexNumber; i < reviews.length; i++) {
+		return `${reviews[i].name} gave the restaurant a ${reviews[i].rating} star review and their feedback was: ${reviews[i].feedback}`;
+	}
+}
+
+console.log(getReviewByIndex(reviews, 7));
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
 
